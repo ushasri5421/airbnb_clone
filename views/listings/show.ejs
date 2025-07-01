@@ -5,7 +5,7 @@
     <div class="col-8 offset-3">
         <h3><%= listing.title %></h3>
     </div>
-    <div class="card col-6 offset-3 show-card listing-card">
+    <div class="card col-lg-6 offset-lg-3 show-card listing-card">
         <img 
             src="<%= listing.image.url %>" 
             class="card-img-top show-img" 
@@ -25,7 +25,7 @@
     <% if(currUser && listing.owner._id.equals(currUser._id)) { %>
 
     <div class="btns">
-        <a href="/listings/<%= listing._id%>/edit" class="btn btn-dark col-1 offset-3 edit-btn">Edit</a>
+        <a href="/listings/<%= listing._id%>/edit" class="btn btn-dark  offset-3 edit-btn">Edit</a>
         <form action="/listings/<%=listing._id %>?_method=delete" method="post">
             <button class="btn btn-dark  offset-2">Delete</button>
         </form>
@@ -33,7 +33,7 @@
     <% } %>
 
 
-<div class="col-8 offset-3 mb-3">
+<div class="col-lg-8 offset-lg-3 mb-3">
   <hr>
   <% if(currUser) {%>
     <hr>
@@ -71,7 +71,7 @@
   <div class="row">
     <p><b>All Reviews</b></p>
  <% for(review of listing.reviews) { %> 
-     <div class="card col-5 ms-3 mb-3">
+     <div class="card col-lg-5 mt-3 mb-3">
        <div class="card-body">
         <h5 class="card-title">@<%= review.author.username %></h5>
         <p class="starability-result card-text" data-rating="<%=review.rating %>"></p>
@@ -85,7 +85,7 @@
 </div>
 <% } %>
 </div>
-<div class="col-6 offset-3 mb-3">
+<div class="col-lg-6 offset-lg-3 mb-3">
    <h3>Where you'll be</h3>
    <div id="map"></div>
    </div>
